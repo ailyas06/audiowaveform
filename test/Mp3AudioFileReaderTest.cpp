@@ -198,7 +198,7 @@ TEST_F(Mp3AudioFileReaderTest, shouldProcessMp3FileWithId3Tags)
 
     InSequence sequence; // Calls expected in the order listed below.
 
-    EXPECT_CALL(processor, init(44100, 1, 0, 8192)).WillOnce(Return(true));
+    EXPECT_CALL(processor, init(16000, 1, 0, 8192)).WillOnce(Return(true));
     EXPECT_CALL(processor, shouldContinue()).WillOnce(Return(true));
 
     // Total number of frames: 116352, which is 3 x 8192 frames then 1 x 6528
@@ -217,7 +217,7 @@ TEST_F(Mp3AudioFileReaderTest, shouldProcessMp3FileWithId3Tags)
         "CRC: no\n"
         "Mode: single channel\n"
         "Emphasis: no\n"
-        "Sample rate: 44100 Hz\n"
+        "Sample rate: 16000 Hz\n"
         "Encoding delay: unknown\n"
         "Padding: unknown\n"
         "\rDone: 0%"

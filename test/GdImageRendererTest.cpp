@@ -272,7 +272,7 @@ TEST_F(GdImageRendererTest, shouldReportErrorIfScaleIsTooHigh)
 TEST_F(GdImageRendererTest, shouldReportErrorIfScaleIsZero)
 {
     WaveformBuffer buffer;
-    buffer.setSampleRate(44100);
+    buffer.setSampleRate(16000);
     buffer.setSamplesPerPixel(0);
     buffer.appendSamples(-1, 1);
 
@@ -292,7 +292,7 @@ TEST_F(GdImageRendererTest, shouldReportErrorIfScaleIsZero)
 TEST_F(GdImageRendererTest, shouldReportErrorIfScaleIsNegative)
 {
     WaveformBuffer buffer;
-    buffer.setSampleRate(44100);
+    buffer.setSampleRate(16000);
     buffer.setSamplesPerPixel(-1);
     buffer.appendSamples(-1, 1);
 
@@ -312,7 +312,7 @@ TEST_F(GdImageRendererTest, shouldReportErrorIfScaleIsNegative)
 TEST_F(GdImageRendererTest, shouldReportErrorIfWaveformBufferIsEmpty)
 {
     WaveformBuffer buffer;
-    buffer.setSampleRate(44100);
+    buffer.setSampleRate(16000);
     buffer.setSamplesPerPixel(64);
 
     const WaveformColors& colors = audacity_waveform_colors;

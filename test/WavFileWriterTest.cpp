@@ -62,7 +62,7 @@ TEST_F(WavFileWriterTest, shouldCreateEmptyWavFile)
 
     WavFileWriter writer(filename.c_str());
 
-    const int sample_rate = 44100;
+    const int sample_rate = 16000;
     const int channels    = 1;
     const int BUFFER_SIZE = 1024;
 
@@ -98,7 +98,7 @@ TEST_F(WavFileWriterTest, shouldCreateMonoWavFile)
 
     WavFileWriter writer(filename.c_str());
 
-    const int sample_rate = 44100;
+    const int sample_rate = 16000;
     const int channels    = 1;
     const int BUFFER_SIZE = 1024;
 
@@ -141,7 +141,7 @@ TEST_F(WavFileWriterTest, shouldReportErrorIfUnableToCreateFile)
 
     WavFileWriter writer(filename.c_str());
 
-    const int sample_rate = 44100;
+    const int sample_rate = 16000;
     const int channels    = 1;
     const int BUFFER_SIZE = 1024;
 

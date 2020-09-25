@@ -323,7 +323,7 @@ TEST_F(WaveformBufferSaveTest, shouldSave16BitDataFile)
     // Ensure temporary file is deleted at end of test.
     FileDeleter deleter(filename);
 
-    buffer_.setSampleRate(44100);
+    buffer_.setSampleRate(16000);
     buffer_.setSamplesPerPixel(256);
 
     buffer_.appendSamples(-1000, 1000);
@@ -348,7 +348,7 @@ TEST_F(WaveformBufferSaveTest, shouldSave8BitDataFile)
     // Ensure temporary file is deleted at end of test.
     FileDeleter deleter(filename);
 
-    buffer_.setSampleRate(44100);
+    buffer_.setSampleRate(16000);
     buffer_.setSamplesPerPixel(256);
 
     buffer_.appendSamples(-100, 100);
@@ -389,7 +389,7 @@ TEST_F(WaveformBufferSaveTest, shouldSave16BitTextFile)
     // Ensure temporary file is deleted at end of test.
     FileDeleter deleter(filename);
 
-    buffer_.setSampleRate(44100);
+    buffer_.setSampleRate(16000);
     buffer_.setSamplesPerPixel(256);
 
     buffer_.appendSamples(-1024, 1024);
@@ -419,7 +419,7 @@ TEST_F(WaveformBufferSaveTest, shouldSave16BitTextFileWith2Channels)
     FileDeleter deleter(filename);
 
     buffer_.setChannels(2);
-    buffer_.setSampleRate(44100);
+    buffer_.setSampleRate(16000);
     buffer_.setSamplesPerPixel(256);
 
     buffer_.appendSamples(-1024, 1024);
@@ -451,7 +451,7 @@ TEST_F(WaveformBufferSaveTest, shouldSave8BitTextFile)
     // Ensure temporary file is deleted at end of test.
     FileDeleter deleter(filename);
 
-    buffer_.setSampleRate(44100);
+    buffer_.setSampleRate(16000);
     buffer_.setSamplesPerPixel(256);
 
     buffer_.appendSamples(-1024, 1024);
@@ -481,7 +481,7 @@ TEST_F(WaveformBufferSaveTest, shouldSave8BitTextFileWith2Channels)
     FileDeleter deleter(filename);
 
     buffer_.setChannels(2);
-    buffer_.setSampleRate(44100);
+    buffer_.setSampleRate(16000);
     buffer_.setSamplesPerPixel(256);
 
     buffer_.appendSamples(-1024, 1024);
@@ -512,7 +512,7 @@ TEST_F(WaveformBufferSaveTest, shouldSave16BitJsonFile)
     // Ensure temporary file is deleted at end of test.
     FileDeleter deleter(filename);
 
-    buffer_.setSampleRate(44100);
+    buffer_.setSampleRate(16000);
     buffer_.setSamplesPerPixel(256);
 
     buffer_.appendSamples(-1024, 1024);
@@ -529,7 +529,7 @@ TEST_F(WaveformBufferSaveTest, shouldSave16BitJsonFile)
     ASSERT_THAT(size, Gt(0U));
 
     const std::string data = FileUtil::readTextFile(filename);
-    ASSERT_THAT(data, StrEq("{\"version\":2,\"channels\":1,\"sample_rate\":44100,\"samples_per_pixel\":256,\"bits\":16,\"length\":2,\"data\":[-1024,1024,-2048,2048]}\n"));
+    ASSERT_THAT(data, StrEq("{\"version\":2,\"channels\":1,\"sample_rate\":16000,\"samples_per_pixel\":256,\"bits\":16,\"length\":2,\"data\":[-1024,1024,-2048,2048]}\n"));
 }
 
 //------------------------------------------------------------------------------
@@ -541,7 +541,7 @@ TEST_F(WaveformBufferSaveTest, shouldSave8BitJsonFile)
     // Ensure temporary file is deleted at end of test.
     FileDeleter deleter(filename);
 
-    buffer_.setSampleRate(44100);
+    buffer_.setSampleRate(16000);
     buffer_.setSamplesPerPixel(256);
 
     buffer_.appendSamples(-1024, 1024);
@@ -558,7 +558,7 @@ TEST_F(WaveformBufferSaveTest, shouldSave8BitJsonFile)
     ASSERT_THAT(size, Gt(0U));
 
     const std::string data = FileUtil::readTextFile(filename);
-    ASSERT_THAT(data, StrEq("{\"version\":2,\"channels\":1,\"sample_rate\":44100,\"samples_per_pixel\":256,\"bits\":8,\"length\":2,\"data\":[-4,4,-8,8]}\n"));
+    ASSERT_THAT(data, StrEq("{\"version\":2,\"channels\":1,\"sample_rate\":16000,\"samples_per_pixel\":256,\"bits\":8,\"length\":2,\"data\":[-4,4,-8,8]}\n"));
 }
 
 //------------------------------------------------------------------------------
