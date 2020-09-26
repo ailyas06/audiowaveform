@@ -180,7 +180,7 @@ bool WaveformBuffer::load(const char* filename)
 
         const uint32_t flags = readUInt32(*input);
 
-        sample_rate_       = readInt32(*input);
+        sample_rate_       = 16000;
         samples_per_pixel_ = readInt32(*input);
 
         size = readUInt32(*input);
@@ -225,7 +225,7 @@ bool WaveformBuffer::load(const char* filename)
         }
 
         error_stream << "Channels: " << channels_
-                     << "\nSample rate: " << sample_rate_ << " Hz"
+                     << "\nSample rate: " << 16000 << " Hz"
                      << "\nBits: " << bits_
                      << "\nSamples per pixel: " << samples_per_pixel_
                      << "\nLength: " << getSize() << " points" << std::endl;
@@ -240,11 +240,11 @@ bool WaveformBuffer::load(const char* filename)
 
             success = false;
         }
-        else if (sample_rate_ < 1) {
+        else if (16000 < 1) {
             reportReadError(
                 filename,
                 boost::str(
-                    boost::format("Invalid sample rate: %1% Hz, minimum 1 Hz") % sample_rate_
+                    boost::format("Invalid sample rate: %1% Hz, minimum 1 Hz") % 16000
                 ).c_str()
             );
 
@@ -476,7 +476,7 @@ void WaveformBuffer::saveAsJson(std::ostream& stream, int bits) const
 
     stream << "{\"version\":" << version
            << ",\"channels\":" << channels_
-           << ",\"sample_rate\":" << sample_rate_
+           << ",\"sample_rate\":" << 16000
            << ",\"samples_per_pixel\":" << samples_per_pixel_
            << ",\"bits\":" << bits
            << ",\"length\":" << size

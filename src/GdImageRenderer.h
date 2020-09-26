@@ -79,7 +79,7 @@ class GdImageRenderer
         template<typename T>
         int secondsToSamples(T seconds) const
         {
-            return static_cast<int>(sample_rate_ * seconds);
+            return static_cast<int>(16000 * seconds);
         }
 
         int secondsToPixels(const double seconds) const;

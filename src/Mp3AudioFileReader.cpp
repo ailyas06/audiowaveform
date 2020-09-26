@@ -700,14 +700,14 @@ bool Mp3AudioFileReader::run(AudioProcessor& processor)
         // frame is assumed to be representative of the entire stream.
 
         if (frame_count == 0) {
-            const int sample_rate = static_cast<int>(frame.header.samplerate);
+            const int sample_rate = 16000
             channels = MAD_NCHANNELS(&frame.header);
 
             if (show_info_) {
                 showInfo(error_stream, frame.header, gapless_playback_info);
             }
 
-            if (!processor.init(sample_rate, channels, 0, OUTPUT_BUFFER_SIZE)) {
+            if (!processor.init(16000, channels, 0, OUTPUT_BUFFER_SIZE)) {
                 status = STATUS_PROCESS_ERROR;
                 break;
             }

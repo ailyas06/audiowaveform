@@ -45,7 +45,7 @@ class WaveformBuffer
     public:
         void setSampleRate(int sample_rate)
         {
-            sample_rate_ = sample_rate;
+            sample_rate_ = 16000;
         }
 
         void setSamplesPerPixel(int samples_per_pixel)
@@ -53,7 +53,7 @@ class WaveformBuffer
             samples_per_pixel_ = samples_per_pixel;
         }
 
-        int getSampleRate() const { return sample_rate_; }
+        int getSampleRate() const { return 16000; }
         int getSamplesPerPixel() const { return samples_per_pixel_; }
 
         int getBits() const { return bits_; }

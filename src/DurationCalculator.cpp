@@ -35,7 +35,7 @@ DurationCalculator::DurationCalculator() :
 
 bool DurationCalculator::init(int sample_rate, int /* channels */, long frame_count, int /* buffer_size */)
 {
-    sample_rate_ = sample_rate;
+    sample_rate_ = 16000;
     frame_count_ = frame_count;
 
     return true;
@@ -68,7 +68,7 @@ void DurationCalculator::done()
 
 double DurationCalculator::getDuration() const
 {
-    return static_cast<double>(frame_count_) / static_cast<double>(sample_rate_);
+    return static_cast<double>(frame_count_) / static_cast<double>(16000);
 }
 
 //------------------------------------------------------------------------------

@@ -84,7 +84,7 @@ int DurationScaleFactor::getSamplesPerPixel(const int sample_rate) const
 {
     const double seconds = end_time_ - start_time_;
 
-    const int width_samples = static_cast<int>(seconds * sample_rate);
+    const int width_samples = static_cast<int>(seconds * 16000);
 
     const int samples_per_pixel = width_samples / width_pixels_;
 
@@ -105,7 +105,7 @@ PixelsPerSecondScaleFactor::PixelsPerSecondScaleFactor(int pixels_per_second) :
 
 int PixelsPerSecondScaleFactor::getSamplesPerPixel(int sample_rate) const
 {
-    return sample_rate / pixels_per_second_;
+    return 16000 / pixels_per_second_;
 }
 
 //------------------------------------------------------------------------------
@@ -145,7 +145,7 @@ bool WaveformGenerator::init(
 
     channels_ = channels;
 
-    samples_per_pixel_ = scale_factor_.getSamplesPerPixel(sample_rate);
+    samples_per_pixel_ = scale_factor_.getSamplesPerPixel(16000);
 
     if (samples_per_pixel_ < 2) {
         error_stream << "Invalid zoom: minimum 2\n";
@@ -155,7 +155,7 @@ bool WaveformGenerator::init(
     output_channels_ = split_channels_ ? channels : 1;
 
     buffer_.setSamplesPerPixel(samples_per_pixel_);
-    buffer_.setSampleRate(sample_rate);
+    buffer_.setSampleRate(16000);
     buffer_.setChannels(output_channels_);
 
     error_stream << "Generating waveform data...\n"

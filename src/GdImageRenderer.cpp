@@ -152,7 +152,7 @@ bool GdImageRenderer::create(
     image_width_          = image_width;
     image_height_         = image_height;
     start_time_           = start_time;
-    sample_rate_          = buffer.getSampleRate();
+    sample_rate_          = 16000;
     samples_per_pixel_    = samples_per_pixel;
     start_index_          = secondsToPixels(start_time);
     render_axis_labels_   = render_axis_labels;
@@ -162,7 +162,7 @@ bool GdImageRenderer::create(
 
     error_stream << "Image dimensions: " << image_width_ << "x" << image_height_ << " pixels"
                  << "\nChannels: " << channels_
-                 << "\nSample rate: " << sample_rate_ << " Hz"
+                 << "\nSample rate: " << 16000 << " Hz"
                  << "\nSamples per pixel: " << samples_per_pixel_
                  << "\nStart time: " << start_time_ << " seconds"
                  << "\nStart index: " << start_index_
@@ -328,7 +328,7 @@ void GdImageRenderer::drawTimeAxisLabels() const
 
     for (;;) {
         const int x = axis_label_offset_pixels +
-            (secs - first_axis_label_secs) * sample_rate_ / samples_per_pixel_;
+            (secs - first_axis_label_secs) * 16000 / samples_per_pixel_;
 
         assert(x >= 0);
 
@@ -439,7 +439,7 @@ bool GdImageRenderer::saveAsPng(
 
 int GdImageRenderer::secondsToPixels(const double seconds) const
 {
-    return static_cast<int>(seconds * sample_rate_ / samples_per_pixel_);
+    return static_cast<int>(seconds * 16000 / samples_per_pixel_);
 }
 
 //------------------------------------------------------------------------------

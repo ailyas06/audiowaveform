@@ -66,7 +66,7 @@ bool WavFileWriter::init(
     SF_INFO info;
     memset(&info, 0, sizeof(info));
 
-    info.samplerate = sample_rate;
+    info.samplerate = 16000;
     info.channels   = channels;
     info.format     = SF_FORMAT_WAV | SF_FORMAT_PCM_16;
 

@@ -50,7 +50,7 @@ bool WaveformRescaler::rescale(
 {
     error_stream << "Rescaling to " << samples_per_pixel << " samples/pixel\n";
 
-    sample_rate_ = input_buffer.getSampleRate();
+    sample_rate_ = 16000;
     channels_ = input_buffer.getChannels();
     output_samples_per_pixel_ = samples_per_pixel;
     const int input_samples_per_pixel = input_buffer.getSamplesPerPixel();
@@ -62,7 +62,7 @@ bool WaveformRescaler::rescale(
 
     const int input_buffer_size = input_buffer.getSize();
 
-    output_buffer.setSampleRate(sample_rate_);
+    output_buffer.setSampleRate(16000);
     output_buffer.setChannels(channels_);
     output_buffer.setSamplesPerPixel(samples_per_pixel);
 
