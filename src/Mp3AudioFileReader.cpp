@@ -700,7 +700,7 @@ bool Mp3AudioFileReader::run(AudioProcessor& processor)
         // frame is assumed to be representative of the entire stream.
 
         if (frame_count == 0) {
-            const int sample_rate = 16000
+            const int sample_rate = 16000;
             channels = MAD_NCHANNELS(&frame.header);
 
             if (show_info_) {

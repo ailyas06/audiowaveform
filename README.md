@@ -213,7 +213,7 @@ CMAKE_INSTALL_PREFIX=...` option when invoking `cmake` above.
 
 #### `--help`
 
-Show help message.
+Show help message By Annus.
 
 #### `--version`, `-v`
 
@@ -253,7 +253,7 @@ option must be used when writing to standard output. It may also be used to set
 the output file format, instead of it being determined from the file extension
 from the `--output-filename` option.
 
-#### `--zoom`, `-z <zoom>` (default: 256)
+#### `--zoom`, `-z <zoom>` (default: 256 added by annus)
 
 When creating a waveform data file or image, specifies the number of input
 samples to use to generate each output waveform data point.

@@ -109,7 +109,7 @@ bool GdImageRenderer::create(
         return false;
     }
 
-    const int sample_rate = buffer.getSampleRate();
+    const int sample_rate = 16000;
 
     if (sample_rate <= 0) {
         error_stream << "Invalid sample rate: " << sample_rate << " Hz\n";

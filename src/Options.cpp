@@ -86,7 +86,7 @@ bool Options::parseCommandLine(int argc, const char* const* argv)
 
     desc_.add_options()(
         "help",
-        "show help message"
+        "show help message by Annus"
     )(
         "version,v",
         "show version information"
